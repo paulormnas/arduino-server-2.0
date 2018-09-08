@@ -17,26 +17,6 @@ public class AcessoPortaCOM {
 	public AcessoPortaCOM(){
 		openPort();
 	}
-	
-	//Singleton ----------------------------------------------
-//	public static AcessoPortaCOM acesso;
-//	   public static AcessoPortaCOM getInstance() {
-//	      if(acesso == null) {
-//	         acesso = new AcessoPortaCOM();
-//	         System.out.println("O objeto2 é: " + acesso);
-//	         chosenPort = SerialPort.getCommPort("ttyACM0");
-//	         chosenPort.setBaudRate(115200);
-//	 		 chosenPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
-//	 		 chosenPort.openPort(); 
-//	 		 
-//	 		 //Objetos para enviar e receber dados da porta serial
-//	 		 scannerIn = new Scanner(chosenPort.getInputStream()); 			//Recebe o fluxo de informa��es que vem da porta serial
-//	 		 scannerOut = chosenPort.getOutputStream();		//Envia o fluxo de dados pela porta serial
-//	      
-//	      }
-//	      return acesso;
-//	   }
-	//----------------------------------------------
 	   
 	public boolean portaEstaAberta() {
 		return chosenPort.isOpen();
@@ -53,7 +33,7 @@ public class AcessoPortaCOM {
         chosenPort.setBaudRate(115200);
 		chosenPort.setComPortTimeouts(SerialPort.TIMEOUT_SCANNER, 0, 0);
 		chosenPort.openPort();
-		scannerIn = new Scanner(chosenPort.getInputStream()); 			//Recebe o fluxo de informações que vem da porta serial
+		scannerIn = new Scanner(chosenPort.getInputStream()); 		//Recebe o fluxo de informações que vem da porta serial
 		scannerOut = chosenPort.getOutputStream();		//Envia o fluxo de dados pela porta serial
 	}
 		
